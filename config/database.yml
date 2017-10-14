@@ -1,0 +1,24 @@
+development: &base
+  adapter: mysql2
+  encoding: utf8mb4
+  charset: utf8mb4
+  collation: utf8mb4_unicode_ci
+  database: config_development
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: ''
+  host: <%= ENV['MYSQL_HOST'] %>
+  port: 3306
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+staging:
+  <<: *base
+  database: config_staging
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+
+production:
+  <<: *base
+  database: config_production
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
