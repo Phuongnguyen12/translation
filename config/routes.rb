@@ -3,7 +3,17 @@ Rails.application.routes.draw do
     resources :translations
 
     root to: "translations#index"
+    # index     get function --> /admin/translations # show all translations
+    # create    post function --> /admin/translations # show all translations
+    # show      get function --> /admin/translations/:id # show only one translation
+    # update    PUT function --> /admin/translations/:id # upadte one translation
+    # destroy   DELETE function --> /admin/translations/:id # delete one translation
+    # restful API: get, post, put, delete, patch
+
   end
+
+  # get /translations
+  resources :translations, only: [:index]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

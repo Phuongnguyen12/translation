@@ -11,7 +11,7 @@ class TranslationDashboard < Administrate::BaseDashboard
     id: Field::Number,
     key: Field::Text,
     locale: Field::Select.with_options(
-      collection: ["en","fi"]
+      collection: ["en", "fi", "tr", "sv", "da"]
     ),
     value: Field::Text,
     created_at: Field::DateTime,

@@ -3,6 +3,12 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+### Todo
+
+* support translations endpoint for fetching translations
+
+* add basic authentication
+
 Things you may want to cover:
 
 * Ruby version

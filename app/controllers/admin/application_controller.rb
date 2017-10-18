@@ -7,9 +7,10 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
+    # TODO enable basic auth here
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      # Add authentication logic here.
     end
 
     # Override this value to specify the number of elements to display at a time
