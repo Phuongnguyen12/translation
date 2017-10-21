@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   # get /translations
   #resources :translations, only: [:index]
   get '/translations', to: 'translations#index'
-
-
+  resources :sessions
 
 end
