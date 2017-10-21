@@ -1,4 +1,4 @@
-# All Administrate controllers inherit from this `Admin::ApplicationController`,
+  # All Administrate controllers inherit from this `Admin::ApplicationController`,
 # making it the ideal place to put authentication logic or other
 # before_actions.
 #
@@ -7,10 +7,11 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
-    # TODO enable basic auth here
-
+    protected
     def authenticate_admin
-      # Add authentication logic here.
+      authenticate_or_request_with_http_basic do |username, password|
+        username == USER_ID && password == PASSWORD
+      end
     end
 
     # Override this value to specify the number of elements to display at a time

@@ -5,7 +5,7 @@ class TranslationsController < ActionController::Base
   #
   # output: json of the translations
   #
-  # E.g: /translations?locale=en
+  # E.g: /translations?locale=en&greeting=hello
   # --> return all translations for locale = en
   # --> output:
   # [
@@ -14,8 +14,12 @@ class TranslationsController < ActionController::Base
   # ]
   def index
     # TODO fetching translations from database
-    @translations = []
-    return @translations
+    @translations = Translation.all
+    @translations = Translation.where(locale: params[:locale])
+    params[:greeting]
+    # to return json --> search for "response as json in rails 5"
+    #return @translations
+    render :json => @translations
   end
 
 end

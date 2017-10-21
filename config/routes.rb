@@ -10,10 +10,13 @@ Rails.application.routes.draw do
     # destroy   DELETE function --> /admin/translations/:id # delete one translation
     # restful API: get, post, put, delete, patch
 
+
   end
 
   # get /translations
-  resources :translations, only: [:index]
+  #resources :translations, only: [:index]
+  get '/translations', to: 'translations#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
 end
