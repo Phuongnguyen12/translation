@@ -1,0 +1,21 @@
+<%= form_tag(sessions_path, method: "post", class: "login") do%>
+
+
+
+    <div class="field email">
+      <label>Email</label><br>
+      <%= text_field_tag :email %>
+
+    </div>
+
+    <div class="field password">
+      <label>Password</label><br>
+      <%= password_field_tag :password %>
+    </div>
+    <br>
+
+    <div class="field submit">
+      <%= submit_tag "Login" %>
+
+    </div>
+<% end %>
