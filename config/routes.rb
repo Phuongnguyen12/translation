@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   get '/translations', to: 'translations#index'
   resources :sessions
 
+
+
+
 end
