@@ -16,7 +16,6 @@ class TranslationsController < ActionController::Base
     # TODO fetching translations from database
     @translations = Translation.all
     @translations = Translation.where(locale: params[:locale])
-    params[:greeting]
     # to return json --> search for "response as json in rails 5"
     #return @translations
     render :json => @translations
