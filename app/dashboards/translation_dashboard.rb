@@ -14,6 +14,7 @@ class TranslationDashboard < Administrate::BaseDashboard
       collection: ["en", "fi", "tr", "sv", "da"]
     ),
     value: Field::Text,
+    description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -28,6 +29,7 @@ class TranslationDashboard < Administrate::BaseDashboard
     :key,
     :locale,
     :value,
+    :description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,6 +39,7 @@ class TranslationDashboard < Administrate::BaseDashboard
     :key,
     :locale,
     :value,
+    :description,
     :created_at,
     :updated_at,
   ].freeze
@@ -48,6 +51,7 @@ class TranslationDashboard < Administrate::BaseDashboard
     :key,
     :locale,
     :value,
+    :description
   ].freeze
 
   # Overwrite this method to customize how translations are displayed

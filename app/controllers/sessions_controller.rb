@@ -23,16 +23,12 @@ class SessionsController < ActionController::Base
         password: params[:password]
     })
 
-
-
     if resp.code == "200"
       hash = JSON.parse resp.body
-
 
       # todo handle successful case
       cookies[:token] = hash[:auth_token]
       redirect_to admin_translations_path
-
     else
 
       # todo display error
