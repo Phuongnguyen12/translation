@@ -9,12 +9,18 @@ class TranslationDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    key: Field::Text,
+    key: Field::Text.with_options(
+      searchable: true
+    ),
     locale: Field::Select.with_options(
       collection: ["en", "fi", "tr", "sv", "da"]
     ),
-    value: Field::Text,
-    description: Field::Text,
+    value: Field::Text.with_options(
+      searchable: true
+    ),
+    description: Field::Text.with_options(
+      searchable: true
+    ),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
